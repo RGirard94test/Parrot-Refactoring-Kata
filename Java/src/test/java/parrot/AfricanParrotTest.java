@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class NorwegianParrotTest {
+public class AfricanParrotTest {
     @Test
     public void isShouldReturnNorwegianParrotSpeed() {
         //GIVEN
-        NorwegianParrot coco = new NorwegianParrot(12, false);
-        double expected = 24.0;
+        AfricanParrot coco = new AfricanParrot(1);
+        double expected = 3.0;
         //WHEN
         double actual = coco.getSpeed();
         //THEN

@@ -1,7 +1,12 @@
 package parrot;
 
-//public class EuropeanParrot extends Parrot{
-//    public EuropeanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-//        super(type, numberOfCoconuts, voltage, isNailed);
-//    }
-//}
+public class EuropeanParrot extends Parrot {
+    public EuropeanParrot() {
+        super();
+    }
+
+    @Override
+    public double getSpeed() {
+        return BASE_SPEED;
+    }
+}

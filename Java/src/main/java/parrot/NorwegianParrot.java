@@ -1,12 +1,11 @@
 package parrot;
 
 public class NorwegianParrot extends Parrot {
-
     private final boolean isNailed;
     private final double voltage;
 
-    public NorwegianParrot(String type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(type, numberOfCoconuts);
+    public NorwegianParrot(double voltage, boolean isNailed) {
+        super();
         this.isNailed = isNailed;
         this.voltage = voltage;
     }
