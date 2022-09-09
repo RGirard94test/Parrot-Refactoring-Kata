@@ -2,41 +2,35 @@ package parrot;
 
 public class Parrot {
 
+    public static final double MAXIMUM_SPEED_VALUE = 24.0;
+    public static final double LOAD_FACTOR = 9.0;
+    public static final double BASE_SPEED = 12.0;
+
     private String type;
     private int numberOfCoconuts;
-    private double voltage;
-    private boolean isNailed;
 
-    public Parrot(String type, int numberOfCoconuts, double voltage, boolean isNailed) {
+
+    public Parrot(String type, int numberOfCoconuts) {
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
-        this.voltage = voltage;
-        this.isNailed = isNailed;
     }
 
     public double getSpeed() {
         switch (type) {
             case "EUROPEAN":
-                return getBaseSpeed();
+                return BASE_SPEED;
             case "AFRICAN":
-                return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
-            case "NORWEGIAN_BLUE":
-                return (isNailed) ? 0 : getBaseSpeed(voltage);
+                return getAfricanParrotSpeed();
             default:
                 throw new RuntimeException("Should be unreachable");
         }
     }
 
-    private double getBaseSpeed(double voltage) {
-        return Math.min(24.0, voltage * getBaseSpeed());
-    }
 
-    private double getLoadFactor() {
-        return 9.0;
-    }
 
-    private double getBaseSpeed() {
-        return 12.0;
+    private double getAfricanParrotSpeed() {
+        return Math.max(0, BASE_SPEED - LOAD_FACTOR * numberOfCoconuts);
     }
 
 }
+
